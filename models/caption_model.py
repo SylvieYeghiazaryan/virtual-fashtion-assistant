@@ -1,14 +1,17 @@
 from transformers import BlipForConditionalGeneration, BlipProcessor
 from PIL import Image
 
+# Global initialization of BLIP
 blip_processor = BlipProcessor.from_pretrained("Salesforce/blip-image-captioning-base")
 blip_model = BlipForConditionalGeneration.from_pretrained("Salesforce/blip-image-captioning-base")
 
 def image_caption(image_path):
     """
-    Generate a caption for the uploaded clothing image using preloaded BLIP model.
+    Generate a caption for the uploaded clothing image using the BLIP model.
+
     Args:
         image_path (str): Path to the uploaded image.
+
     Returns:
         str: Caption describing the uploaded image.
     """
